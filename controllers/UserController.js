@@ -239,7 +239,7 @@ exports.sendForgotPasswordCode = async (req, res) => {
 // Đặt lại mật khẩu mới sau khi xác thực mã
 exports.resetPassword = async (req, res) => {
   const { email, newPassword } = req.body;
-  const normalizedEmail = email.toLowerCase();
+  const normalizedEmail = email.toLowerCase().trim();
 
   // Kiểm tra tính hợp lệ của mật khẩu mới
   if (!newPassword || typeof newPassword !== "string" || !isValidPassword(newPassword)) {
