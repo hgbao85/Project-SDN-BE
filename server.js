@@ -26,7 +26,7 @@ mongoose
 
 // Hàm xóa tài khoản chưa xác thực
 const deleteUnverifiedAccounts = async () => {
-  const expirationTime = 1 * 60 * 1000; // 1 phút
+  const expirationTime = 10 * 60 * 1000; // 10 phút
   const thresholdDate = new Date(Date.now() - expirationTime);
   
   console.log(`Đang xóa tài khoản chưa xác thực trước: ${thresholdDate}`);
@@ -39,10 +39,9 @@ const deleteUnverifiedAccounts = async () => {
   console.log(`Số tài khoản đã xóa: ${result.deletedCount}`);
 };
 
-// Gọi hàm deleteUnverifiedAccounts mỗi phút
 setInterval(() => {
   deleteUnverifiedAccounts();
-}, 60 * 1000); // Gọi hàm mỗi 60 giây
+},10 * 60 * 1000);
 
 // Routes
 app.get("/", (req, res) => res.send("Backend is running"));
