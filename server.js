@@ -15,7 +15,7 @@ app.use(express.json());
 // MongoDB connection
 mongoose
   .connect(
-    "mongodb+srv://huynhgiabao853:qe170095@baohg.hqad9.mongodb.net/SDN",
+    "mongodb+srv://viettdqe170219:KTiOMNdRfWejBLKb@cluster0.otgtk.mongodb.net/",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
